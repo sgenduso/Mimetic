@@ -12,10 +12,18 @@ describe('parseQueryString', function () {
     var actual = parseQueryString(input);
 
     // Part 3a: define your expected output for the given input
-    var expected = { artist: 'Miles', year: '1948' }
+    var expected = { artist: 'Miles', year: '1948' };
 
     // Part 3b: check to see if your code produced the results you expected
     expect(actual).toEqual(expected);
 
   });
+
+  it('returns empty object when input is null', function () {
+    var input = null;
+    var actual = parseQueryString(null);
+    var expected = {};
+    expect(actual).toEqual(expected);
+  });
+
 });
