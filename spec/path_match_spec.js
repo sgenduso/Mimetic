@@ -1,7 +1,7 @@
 var pathMatch = require('../lib/path_match');
 
 describe('pathMatch', function () {
-  xit('returns the object that has an exact-matching verb and path to the input', function () {
+  it('returns the object that has an exact-matching verb and path to the input', function () {
 
     var routeDefinitions = [
       { verb: 'get', path: '/about' },
@@ -16,7 +16,7 @@ describe('pathMatch', function () {
     expect(pathMatch(routeDefinitions, 'post', '/')).toEqual({ verb: 'post', path: '/'});
   });
 
-  xit('returns null if the verb does not match any in array', function () {
+  it('returns null if the verb does not match any in array', function () {
 
     var routeDefinitions = [
       { verb: 'get', path: '/about' },
@@ -28,7 +28,7 @@ describe('pathMatch', function () {
     expect(pathMatch(routeDefinitions, 'post', '/about')).toEqual(null);
   });
 
-  xit('returns the object that matches the path to your route definitions even when it contains dynamic segments', function () {
+  it('returns the object that matches the path to your route definitions even when it contains dynamic segments', function () {
     var routeDefinitions = [
       { verb: 'get', path: '/artists/:artist_name/albums' },
       { verb: 'get', path: '/artists/:artist_name/albums/:album_id' },
